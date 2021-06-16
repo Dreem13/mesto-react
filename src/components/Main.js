@@ -1,34 +1,26 @@
-import logo from './logo.svg';
+import ava from '../images/kusto.png';
 
-function App() {
+function Main (props) {
   return (
-    <div>      
-      <>
-  <div className="page-container">
-    <header className="header">
-      <a className="header__logo"><img src="<%=require('./images/logo_w.svg')%>" alt="Логотип портала Место" /></a>
-    </header>
-    <main>
+    <>
+   <main>
       <section className="profile">
-        <button type="button" className="profile__avatar-button" />          
+        <button type="button" className="profile__avatar-button" onClick={props.onEditAvatar}/>          
         <div className="profile__info">
-          <img className="profile__info-img" src="<%=require('./images/kusto.png')%>" alt="Фотография пользователя" />
+          <img className="profile__info-img" src={ava}  alt="Фотография пользователя" />
           <div className="profile__info-text">
             <h1 className="profile__title">Жак Ив Кусто</h1>
             <p className="profile__subtitle">Исследователь океана</p>
-            <button className="profile__info-text-button" type="button" aria-label="Изменение данных пользователя" />
+            <button className="profile__info-text-button" type="button" onClick={props.onEditProfile} aria-label="Изменение данных пользователя" />
           </div>
         </div>
-        <button className="profile__button" type="button" aria-label="Добавление новой карточки" />
+        <button className="profile__button" type="button" onClick={props.onAddPlace} aria-label="Добавление новой карточки" />
       </section>
       <div className="elements">
       </div>
     </main>
-    <footer className="footer">
-      <p className="footer__copyright">© 2020 Mesto Russia</p>
-    </footer>
-  </div>
-  <div className="popup popup_type_edit">
+
+    {/* <div className="popup popup_type_edit">
     <div className="popup__overlay" />
     <div className="popup__container">
       <button className="popup__close popup__close_edit" type="button" title="Закрыть окно" aria-label="Закрыть форму" />
@@ -47,7 +39,8 @@ function App() {
         </fieldset>
       </form>
     </div>
-  </div>
+  </div> */}
+
   <div className="popup popup_type_avatar">
     <div className="popup__overlay" />
     <div className="popup__container">
@@ -62,6 +55,7 @@ function App() {
       <button type="button" className="popup__close" />
     </div>
   </div>
+
   <div className="popup popup_type_cards">
     <div className="popup__overlay" />
     <div className="popup__container">
@@ -82,6 +76,7 @@ function App() {
       </form>
     </div>
   </div>
+
   <div className="popup popup_type_image">
     <div className="popup__overlay" />
     <div className="popup__figure-container">
@@ -92,6 +87,7 @@ function App() {
       <button type="button" className="popup__close popup__close_image" />
     </div>
   </div>
+
   <div className="popup popup_type_delete">
     <div className="popup__overlay" />
     <div className="popup__container">
@@ -104,11 +100,9 @@ function App() {
       </form>
     </div>
   </div>
-  <template id="card-template" />
-</>
-
-    </div>
-  );
+  <template id="card-template" />   
+    </>
+    );   
 }
 
-export default App;
+export default Main;
