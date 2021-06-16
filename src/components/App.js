@@ -2,12 +2,14 @@ import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
 import PopupWithForm from './PopupWithForm.js';
+import ImagePopup from './ImagePopup.js';
 import React from 'react';
 
 function App() {
 
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   function handleEditAvatarClick () {
-    // document.querySelector('.popup_type_avatar').classList.add('popup_open');
+    setIsEditAvatarPopupOpen(true);
   }
 
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
@@ -15,18 +17,16 @@ function App() {
     setIsEditProfilePopupOpen(true);
   }
 
-
-
-
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   function handleAddPlaceClick () {
-    // document.querySelector('.popup_type_cards').classList.add('popup_open');
+    setIsAddPlacePopupOpen(true);
   }
 
   function closeAllPopups () {
     setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+    setIsEditAvatarPopupOpen(false);
   }
-
-
 
   return (        
   <div className="App body-background">
@@ -49,6 +49,26 @@ function App() {
           <span className="error" id="work-input--error" />
         </div>
        </PopupWithForm>
+      
+       <PopupWithForm name="cards" title="Новое место" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups}>
+        <div className="popup__input-container">
+          <input className="popup__input popup__input_card_name" type="text" placeholder="Название" name="name" required id="card-input" minLength={2} maxLength={30} />
+          <span className="error" id="card-input--error" />
+        </div>
+        <div className="popup__input-container">
+          <input className="popup__input popup__input_card_caption" type="url" placeholder="Ссылка на картинку" name="link" required id="url-input" />
+          <span className="error" id="url-input--error" />
+        </div>
+       </PopupWithForm>
+
+       <PopupWithForm name="avatar" title="Обновить аватар" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}>
+        <input className="popup__input popup__input_title_avatar" id="avatar-input" type="url" name="avatar" placeholder="Ссылка на аватар" autoComplete="on" required />
+        <span className="error span-avatar" id="avatar-input--error" />
+       </PopupWithForm>
+
+       <ImagePopup onClose={closeAllPopups} />
+
+       <PopupWithForm name="delete" title="Вы уверены?" />
            
       </div>
   </div>  

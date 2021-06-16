@@ -41,7 +41,7 @@ function Main (props) {
     </div>
   </div> */}
 
-  <div className="popup popup_type_avatar">
+  {/* <div className="popup popup_type_avatar">
     <div className="popup__overlay" />
     <div className="popup__container">
       <h2 className="popup__header">Обновить аватар</h2>
@@ -54,9 +54,9 @@ function Main (props) {
       </form>
       <button type="button" className="popup__close" />
     </div>
-  </div>
+  </div> */}
 
-  <div className="popup popup_type_cards">
+  {/* <div className="popup popup_type_cards">
     <div className="popup__overlay" />
     <div className="popup__container">
       <button className="popup__close popup__close_cards" type="button" title="Закрыть окно" aria-label="Закрыть форму" />
@@ -75,9 +75,9 @@ function Main (props) {
         </fieldset>
       </form>
     </div>
-  </div>
+  </div> */}
 
-  <div className="popup popup_type_image">
+  {/* <div className="popup popup_type_image">
     <div className="popup__overlay" />
     <div className="popup__figure-container">
       <figure className="popup__figure">
@@ -86,9 +86,9 @@ function Main (props) {
       </figure>
       <button type="button" className="popup__close popup__close_image" />
     </div>
-  </div>
+  </div> */}
 
-  <div className="popup popup_type_delete">
+  {/* <div className="popup popup_type_delete">
     <div className="popup__overlay" />
     <div className="popup__container">
       <button className="popup__close popup__close_delete" type="button" title="Закрыть окно" aria-label="Закрыть форму" />
@@ -99,7 +99,8 @@ function Main (props) {
         </fieldset>
       </form>
     </div>
-  </div>
+  </div> */}
+  
   <template id="card-template" />   
     </>
     );   
