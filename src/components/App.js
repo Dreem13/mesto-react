@@ -22,11 +22,14 @@ function App() {
     setIsAddPlacePopupOpen(true);
   }
 
+  const [selectedCard, setSelectedCard] = React.useState(null);
+
   function closeAllPopups () {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
-  }
+    setSelectedCard(null);
+  }  
 
   return (        
   <div className="App body-background">
@@ -66,7 +69,7 @@ function App() {
         <span className="error span-avatar" id="avatar-input--error" />
        </PopupWithForm>
 
-       <ImagePopup onClose={closeAllPopups} />
+       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
 
        <PopupWithForm name="delete" title="Вы уверены?" />
            
