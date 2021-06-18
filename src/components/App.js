@@ -24,6 +24,10 @@ function App() {
 
   const [selectedCard, setSelectedCard] = React.useState(null);
 
+  function handleCardClick(cardData) {
+    setSelectedCard(cardData);
+  }
+
   function closeAllPopups () {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
@@ -38,11 +42,12 @@ function App() {
        <Main
        onEditAvatar = {handleEditAvatarClick}
        onEditProfile = {handleEditProfileClick} 
-       onAddPlace = {handleAddPlaceClick} 
+       onAddPlace = {handleAddPlaceClick}
+       onCardClick={handleCardClick} 
        />           
        <Footer />
 
-       <PopupWithForm name="edit" title="Редактировать профиль" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}>
+       <PopupWithForm name="edit" title="Редактировать профиль" placeholder="Сохранить" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}>
        <div className="popup__input-container">
           <input className="popup__input popup__input_field_name" type="text" name="username" required id="name-input" placeholder="Имя пользователя" minLength={2} maxLength={40} />
           <span className="error" id="name-input--error" />
@@ -53,7 +58,7 @@ function App() {
         </div>
        </PopupWithForm>
       
-       <PopupWithForm name="cards" title="Новое место" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups}>
+       <PopupWithForm name="cards" title="Новое место" placeholder="Создать" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups}>
         <div className="popup__input-container">
           <input className="popup__input popup__input_card_name" type="text" placeholder="Название" name="name" required id="card-input" minLength={2} maxLength={30} />
           <span className="error" id="card-input--error" />
@@ -64,14 +69,14 @@ function App() {
         </div>
        </PopupWithForm>
 
-       <PopupWithForm name="avatar" title="Обновить аватар" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}>
+       <PopupWithForm name="avatar" title="Обновить аватар" placeholder="Сохранить" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}>
         <input className="popup__input popup__input_title_avatar" id="avatar-input" type="url" name="avatar" placeholder="Ссылка на аватар" autoComplete="on" required />
         <span className="error span-avatar" id="avatar-input--error" />
        </PopupWithForm>
 
        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
 
-       <PopupWithForm name="delete" title="Вы уверены?" />
+       <PopupWithForm name="delete" title="Вы уверены?" placeholder="Да" />
            
       </div>
   </div>  

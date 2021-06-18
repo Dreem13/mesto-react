@@ -16,13 +16,13 @@ function Main (props) {
         api.getUserInfo(),
         api.getCards()        
       ])
-      .then(data => {        
+      .then((data) => {        
         setUserName(data[0].name);
         setUserDescription(data[0].description);
         setUserAvatar(data[0].avatar);
         setCards(data[1]);
       })
-      .catch(error => console.log(error))
+      .catch((error) => console.log(error))
     }
     userData()
   },

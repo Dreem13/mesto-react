@@ -1,4 +1,4 @@
-function Card (props) {
+function Card (props) {  
 
 function handleClick() {
     props.onCardClick(props.card)    
