@@ -11,14 +11,14 @@ function Main (props) {
   const [cards, setCards] = React.useState([]);
 
   React.useEffect(() => {
-    function userData () {
+    function userData () {      
       Promise.all([
         api.getUserInfo(),
         api.getCards()        
       ])
-      .then((data) => {        
+      .then((data) => {                   
         setUserName(data[0].name);
-        setUserDescription(data[0].description);
+        setUserDescription(data[0].about);
         setUserAvatar(data[0].avatar);
         setCards(data[1]);
       })
