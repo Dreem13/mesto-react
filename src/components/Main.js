@@ -44,7 +44,7 @@ function Main (props) {
         <button className="profile__button" type="button" onClick={props.onAddPlace} aria-label="Добавление новой карточки" />
       </section>
       <div className="elements">      
-        {cards.map((card, id) => <Card key={id} card={card} onCardClick={props.onCardClick}/>)}                
+        {cards.map((card) => <Card key={card._id} card={card} onCardClick={props.onCardClick}/>)}             
       </div>
     </main>  
   );   
