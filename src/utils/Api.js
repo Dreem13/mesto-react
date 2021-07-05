@@ -127,12 +127,12 @@ like (cardId, isLiked) {
 
 }
 
-const api = new Api ({
+export const api = new Api ({
   url: 'https://mesto.nomoreparties.co/v1/cohort-24',
   token: '8c6e6a0b-c97b-41fa-9ce9-e79b26e708e8',    
 });
 
-export default api;
+// export default api;
 
 
 
