@@ -1,5 +1,3 @@
-// import { apiProps } from './constants.js';
-
 class Api {
 	constructor ({url, token}) {
 		this._url = url;
@@ -131,8 +129,9 @@ like (cardId, isLiked) {
 
 const api = new Api ({
   url: 'https://mesto.nomoreparties.co/v1/cohort-24',
-    token: '8c6e6a0b-c97b-41fa-9ce9-e79b26e708e8',    
+  token: '8c6e6a0b-c97b-41fa-9ce9-e79b26e708e8',    
 });
+
 export default api;
 
 
