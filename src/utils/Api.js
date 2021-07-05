@@ -129,8 +129,8 @@ like (cardId, isLiked) {
 
 }
 
-const api = new Api (apiProps);
-export default api;
+// const api = new Api (apiProps);
+export default new Api (apiProps);
 
 
 
